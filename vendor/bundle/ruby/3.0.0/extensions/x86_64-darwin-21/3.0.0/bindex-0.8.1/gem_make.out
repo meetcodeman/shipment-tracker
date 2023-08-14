@@ -1,0 +1,18 @@
+current directory: /Users/dev/Desktop/repos/shipment-tracker/vendor/bundle/ruby/3.0.0/gems/bindex-0.8.1/ext/skiptrace
+/Users/dev/.rvm/rubies/ruby-3.0.5/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /Users/dev/Desktop/repos/shipment-tracker/vendor/bundle/ruby/3.0.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= sitearchdir\=./.gem.20230814-71641-msax7y sitelibdir\=./.gem.20230814-71641-msax7y clean
+
+current directory: /Users/dev/Desktop/repos/shipment-tracker/vendor/bundle/ruby/3.0.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= sitearchdir\=./.gem.20230814-71641-msax7y sitelibdir\=./.gem.20230814-71641-msax7y
+compiling cruby.c
+linking shared-object skiptrace/internal/cruby.bundle
+
+current directory: /Users/dev/Desktop/repos/shipment-tracker/vendor/bundle/ruby/3.0.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= sitearchdir\=./.gem.20230814-71641-msax7y sitelibdir\=./.gem.20230814-71641-msax7y install
+/usr/local/opt/coreutils/bin/ginstall -c -m 0755 cruby.bundle ./.gem.20230814-71641-msax7y/skiptrace/internal
+
+current directory: /Users/dev/Desktop/repos/shipment-tracker/vendor/bundle/ruby/3.0.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= sitearchdir\=./.gem.20230814-71641-msax7y sitelibdir\=./.gem.20230814-71641-msax7y clean

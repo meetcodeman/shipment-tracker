@@ -1,0 +1,22 @@
+current directory: /Users/dev/Desktop/repos/shipment-tracker/vendor/bundle/ruby/3.0.0/gems/byebug-11.1.3/ext/byebug
+/Users/dev/.rvm/rubies/ruby-3.0.5/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /Users/dev/Desktop/repos/shipment-tracker/vendor/bundle/ruby/3.0.0/gems/byebug-11.1.3/ext/byebug
+make DESTDIR\= sitearchdir\=./.gem.20230814-71641-tykkiu sitelibdir\=./.gem.20230814-71641-tykkiu clean
+
+current directory: /Users/dev/Desktop/repos/shipment-tracker/vendor/bundle/ruby/3.0.0/gems/byebug-11.1.3/ext/byebug
+make DESTDIR\= sitearchdir\=./.gem.20230814-71641-tykkiu sitelibdir\=./.gem.20230814-71641-tykkiu
+compiling breakpoint.c
+compiling byebug.c
+compiling context.c
+compiling locker.c
+compiling threads.c
+linking shared-object byebug/byebug.bundle
+
+current directory: /Users/dev/Desktop/repos/shipment-tracker/vendor/bundle/ruby/3.0.0/gems/byebug-11.1.3/ext/byebug
+make DESTDIR\= sitearchdir\=./.gem.20230814-71641-tykkiu sitelibdir\=./.gem.20230814-71641-tykkiu install
+/usr/local/opt/coreutils/bin/ginstall -c -m 0755 byebug.bundle ./.gem.20230814-71641-tykkiu/byebug
+
+current directory: /Users/dev/Desktop/repos/shipment-tracker/vendor/bundle/ruby/3.0.0/gems/byebug-11.1.3/ext/byebug
+make DESTDIR\= sitearchdir\=./.gem.20230814-71641-tykkiu sitelibdir\=./.gem.20230814-71641-tykkiu clean
