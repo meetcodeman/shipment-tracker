@@ -7,7 +7,7 @@ class CreateShipments < ActiveRecord::Migration[6.1]
       t.string :description
       t.datetime :delivery_date, null: false
       t.string :status, null: false, default: 'PRE_TRANSIT'
-      t.belongs_to :trucker
+      t.belongs_to :trucker, foreign_key: true, type: :uuid
 
       t.timestamps
     end

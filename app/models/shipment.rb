@@ -6,4 +6,6 @@ class Shipment < ApplicationRecord
         FAILURE: 'FAILURE',
         CANCELLED: 'CANCELLED'
     }
+
+    belongs_to :trucker
 end
