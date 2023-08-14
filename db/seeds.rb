@@ -1,7 +1,3 @@
-require 'uuid'
-
-uuid_generator = UUID.new
-
 puts "Starting truckers"
 10.times do
   Trucker.create!(
@@ -25,7 +21,7 @@ puts truckers.count
     lat: Faker::Address.latitude,
     long: Faker::Address.longitude,
     product: Faker::Commerce.product_name,
-    trucker: truckers.sample
+    trucker_id: truckers.sample.id
   )
 
   puts "Created shipment #{shipment.id}"

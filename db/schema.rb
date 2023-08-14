@@ -23,10 +23,9 @@ ActiveRecord::Schema.define(version: 2023_08_14_192759) do
     t.string "description"
     t.datetime "delivery_date", null: false
     t.string "status", default: "PRE_TRANSIT", null: false
-    t.bigint "trucker_id"
+    t.uuid "trucker_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["trucker_id"], name: "index_shipments_on_trucker_id"
   end
 
   create_table "truckers", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
@@ -35,4 +34,5 @@ ActiveRecord::Schema.define(version: 2023_08_14_192759) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "shipments", "truckers"
 end
