@@ -5,6 +5,7 @@ class ShipmentsController < ApplicationController
 
     def index
         @shipments = current_trucker.shipments
+        @shipments = Shipment.all
         # render @shipments
     end
 
@@ -23,7 +24,7 @@ class ShipmentsController < ApplicationController
     private
 
     def current_trucker
-        Trucker.first
+    Trucker.first
     #    Trucker.find_by!(email: params[:trucker_email])
     end
 

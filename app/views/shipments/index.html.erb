@@ -1,6 +1,6 @@
 <div class="collapse" id="navbarToggleExternalContent">
   <div class="bg-dark p-4">
-    <h5 class="text-white h4">Collapsed content</h5>
+    <h5 class="text-white h4">Shipment Tracker</h5>
     <span class="text-muted">Toggleable via the navbar brand.</span>
   </div>
 </div>
@@ -14,15 +14,64 @@
 
 <main>
   <section class="py-5 text-center container">
-    <div class="row py-lg-5">
-      <div class="col-lg-6 col-md-8 mx-auto">
-        <h1 class="fw-light">Album example</h1>
-        <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.</p>
-        <p>
-          <a href="#" class="btn btn-primary my-2">Main call to action</a>
-          <a href="#" class="btn btn-secondary my-2">Secondary action</a>
-        </p>
-      </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-3 shipments" style='height:50vh;overflow-y:scroll;'>
+                <% @shipments.each do |shipment| %>
+                <div class='m-3'>
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body" data-latitude="<%= shipment.lat %>" data-longitude="<%= shipment.long %>">
+                            <h5 class="card-title"><%= shipment.status %></h5>
+                            <p class="card-text"><%= shipment.description %></p>
+                            <button class="shipment-button" data-attribute-id="<%= shipment.id %>">Click me</button>
+                        </div>
+                    </div>
+                </div>
+            <% end %>
+        </div>
+            <div class="col">
+                <div class="map-container">
+                    <div id="map"></div>
+                </div>
+            </div>
+        </div>
     </div>
   </section>
 </main>
+
+<script>
+  $(document).ready(function() {
+    $('.shipments').on('click', '.shipment-button', function(event) {
+      var selectedShipmentId = $(this).data('attribute-id');
+      var latitude = $(this).parent().data('latitude');
+      var longitude = $(this).parent().data('longitude');
+      
+      console.log('Selected shipment ID:', selectedShipmentId);
+      console.log('Latitude:', latitude);
+      console.log('Longitude:', longitude);
+
+      renderGoogleMap(latitude, longitude)
+    });
+  });
+
+  function renderGoogleMap(latitude, longitude) {
+    var mapOptions = {
+      center: { lat: latitude, lng: longitude },
+      zoom: 10
+    };
+
+    var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+
+    var marker = new google.maps.Marker({
+      position: { lat: latitude, lng: longitude },
+      map: map,
+      title: 'Selected Location'
+    });
+  }
+</script>
+
+<%= javascript_pack_tag 'map' %>
+<%= 
+    javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=&callback=initMap",
+    defer: true
+%>
